@@ -4,7 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.atenea.rentcar.Daos.GamaDao;
+
+import com.atenea.rentcar.daos.GamaDao;
 import com.atenea.rentcar.models.Gama;
 
 @Service

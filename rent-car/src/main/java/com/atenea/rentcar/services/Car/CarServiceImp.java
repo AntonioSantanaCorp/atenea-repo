@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.atenea.rentcar.Daos.CarDao;
+
+import com.atenea.rentcar.daos.CarDao;
 import com.atenea.rentcar.models.Car;
 
 @Service
