@@ -12,12 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import org.springframework.lang.Nullable;
 
 @Data
 @Entity
@@ -32,6 +27,5 @@ public class Gama {
     private String description;
     @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "gama")
     @JsonIgnoreProperties("gama")
-    @Nullable
     List<Car> cars;
 }
