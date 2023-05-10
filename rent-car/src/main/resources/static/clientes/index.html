@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      type="module"
+      src="../Componentes/table.component.js"
+    ></script>
+    <script
+      defer
+      type="module"
+      src="../Componentes/modal.component.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer type="module" src="./index.js"></script>
+    <script src="../assets/modal/modal.js"></script>
+    <title>Clientes</title>
+  </head>
+  <body>
+    <main class="container box">
+      <h1 class="title">Administrar Cliente</h1>
+      <a href="../index.html" class="button is-link is-pulled-left">
+        <i class="material-icons">home</i>
+        Inicio
+      </a>
+      <button id="crear-cliente" class="button is-link is-pulled-right">
+        Agregar nuevo cliente
+      </button>
+      <grid-component></grid-component>
+    </main>
+
+    <modal-manage-component title="Crear Cliente">
+      <template id="my-template">
+        <input type="hidden" name="id" value="4" />
+        <div class="field">
+          <label class="label">Nombres Completos</label>
+          <p class="control has-icons-left">
+            <input
+              id="name"
+              required
+              name="name"
+              maxlength="4000"
+              class="input"
+              type="text"
+              placeholder="ingrese el nombre"
+            />
+            <span class="icon is-small is-left">
+              <i class="material-icons">badge</i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <p class="control has-icons-left">
+            <input
+              required
+              id="email"
+              name="email"
+              class="input"
+              type="email"
+              placeholder="ingrese email"
+            />
+            <span class="icon is-small is-left">
+              <i class="material-icons">mail</i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Edad</label>
+          <p class="control has-icons-left">
+            <input
+              required
+              id="age"
+              name="age"
+              class="input"
+              type="number"
+              min="15"
+              placeholder="ingrese edad"
+            />
+            <span class="icon is-small is-left">
+              <i class="material-icons">cake</i>
+            </span>
+          </p>
+        </div>
+      </template>
+    </modal-manage-component>
+  </body>
+</html>

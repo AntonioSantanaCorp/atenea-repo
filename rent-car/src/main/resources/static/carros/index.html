@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      type="module"
+      src="../Componentes/table.component.js"
+    ></script>
+    <script
+      defer
+      type="module"
+      src="../Componentes/modal.component.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer type="module" src="./index.js"></script>
+    <script src="../assets/modal/modal.js"></script>
+    <title>Carros</title>
+  </head>
+  <body>
+    <main class="container box">
+      <h1 class="title">Administrar Carros</h1>
+      <a href="../index.html" class="button is-link is-pulled-left">
+        <i class="material-icons">home</i>
+        Inicio
+      </a>
+      <button id="crear-carro" class="button is-link is-pulled-right">
+        Agregar nuevo carro
+      </button>
+      <grid-component></grid-component>
+    </main>
+
+    <modal-manage-component title="Crear carro">
+      <template id="my-template">
+        <input type="hidden" name="id" value="5" />
+        <div class="field">
+          <label class="label">Marca</label>
+          <p class="control has-icons-left">
+            <input
+              id="brand"
+              required
+              name="brand"
+              maxlength="20"
+              class="input"
+              type="text"
+              placeholder="ingrese una marca"
+            />
+            <span class="icon is-small is-left">
+              <i class="material-icons">toys</i>
+            </span>
+          </p>
+        </div>
+
+        <div class="field">
+          <label class="label">Modelo</label>
+          <p class="control has-icons-left">
+            <input
+              required
+              id="model"
+              name="model"
+              class="input"
+              type="number"
+              placeholder="ingrese modelo"
+            />
+            <span class="icon is-small is-left">
+              <i class="material-icons">format_list_bulleted</i>
+            </span>
+          </p>
+        </div>
+
+        <div class="field">
+          <label class="label">Categoria</label>
+          <p class="control has-icons-left">
+            <input
+              required
+              id="category_id"
+              name="category_id"
+              class="input"
+              type="number"
+              placeholder="ingrese una categoria"
+            />
+            <span class="icon is-small is-left">
+              <i class="material-icons">settings</i>
+            </span>
+          </p>
+        </div>
+      </template>
+    </modal-manage-component>
+  </body>
+</html>
