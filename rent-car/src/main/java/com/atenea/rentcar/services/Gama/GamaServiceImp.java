@@ -18,12 +18,7 @@ public class GamaServiceImp implements GamaService {
     @Override
     @Transactional(readOnly = true)
     public List<Gama> getAll() {
-        List<Gama> gamas = (List<Gama>) this.gamaRepository.findAll();
-        gamas.forEach((gama) -> {
-            gama.setCars(new ArrayList<Car>());
-        });
-
-        return gamas;
+        return (List<Gama>) this.gamaRepository.findAll();
     }
 
     @Override

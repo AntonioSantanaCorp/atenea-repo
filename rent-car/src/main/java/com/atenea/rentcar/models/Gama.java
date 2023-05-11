@@ -9,6 +9,7 @@ import lombok.Data;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Gama {
     private String name;
     @Column(name = "description")
     private String description;
-    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "gama")
+    @OneToMany(cascade = { CascadeType.PERSIST }, fetch = FetchType.LAZY,mappedBy = "gama")
     @JsonIgnoreProperties("gama")
     List<Car> cars;
 }

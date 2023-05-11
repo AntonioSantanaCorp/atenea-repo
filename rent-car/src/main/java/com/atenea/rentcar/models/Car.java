@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,19 +34,16 @@ public class Car {
     private Integer year;
     @Column(name = "description")
     private String description;
-    // @Column(name = "model")
-    // private Integer model;
     @ManyToOne
     @JoinColumn(name = "idGama")
     @JsonIgnoreProperties("cars")
     private Gama gama;
 
-    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "car")
+    @OneToMany(cascade = { CascadeType.PERSIST },fetch = FetchType.LAZY, mappedBy = "car")
     @JsonIgnoreProperties("car")
     List<Message> messages;
 
-    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "car")
+    @OneToMany(cascade = { CascadeType.PERSIST },fetch = FetchType.LAZY, mappedBy = "car")
     @JsonIgnoreProperties("car")
     List<Reservation> reservations;
-
 }

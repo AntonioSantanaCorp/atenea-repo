@@ -5,6 +5,7 @@ import java.util.Date;
 import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +31,7 @@ public class Reservation {
     private Date devolutionDate;
     @Column(name = "status")
     private String status;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idCar")
     @JsonIgnoreProperties("reservations")
     private Car car;
