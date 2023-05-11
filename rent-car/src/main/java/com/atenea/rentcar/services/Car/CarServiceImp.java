@@ -9,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.atenea.rentcar.daos.CarDao;
 import com.atenea.rentcar.models.Car;
-import com.atenea.rentcar.models.Message;
-import com.atenea.rentcar.models.Reservation;
 
 @Service
 public class CarServiceImp implements CarService {

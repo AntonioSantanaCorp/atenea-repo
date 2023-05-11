@@ -34,6 +34,6 @@ public class CarController {
     public ResponseEntity<Car> save(@RequestBody Car newCar) {
         Car car = carService.save(newCar);
 
-        return new ResponseEntity<> (car,HttpStatus.OK);
+        return new ResponseEntity<> (car,HttpStatus.CREATED);
     }
 }
