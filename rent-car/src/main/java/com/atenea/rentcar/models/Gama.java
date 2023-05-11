@@ -14,9 +14,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Data
 @Entity
+@Table(name = "gamas")
 public class Gama {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

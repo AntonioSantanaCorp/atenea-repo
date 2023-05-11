@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name="score")
+@Table(name="scores")
 public class Score {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
