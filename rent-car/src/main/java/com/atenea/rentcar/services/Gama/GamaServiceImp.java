@@ -1,11 +1,13 @@
 package com.atenea.rentcar.services.Gama;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.atenea.rentcar.daos.GamaDao;
+import com.atenea.rentcar.models.Car;
 import com.atenea.rentcar.models.Gama;
 
 @Service
@@ -16,7 +18,12 @@ public class GamaServiceImp implements GamaService {
     @Override
     @Transactional(readOnly = true)
     public List<Gama> getAll() {
-        return (List<Gama>) this.gamaRepository.findAll();
+        List<Gama> gamas = (List<Gama>) this.gamaRepository.findAll();
+        gamas.forEach((gama) -> {
+            gama.setCars(new ArrayList<Car>());
+        });
+
+        return gamas;
     }
 
     @Override

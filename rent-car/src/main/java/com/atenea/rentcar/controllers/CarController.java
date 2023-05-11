@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.atenea.rentcar.dto.CarDto;
 import com.atenea.rentcar.models.Car;
 import java.util.List;
 
@@ -18,7 +20,7 @@ import com.atenea.rentcar.services.Car.CarService;
 public class CarController {
 
     @Autowired
-    private CarService carService; 
+    private CarService carService;
 
     @GetMapping(value = "all")
     public List<Car> get() {
@@ -26,7 +28,7 @@ public class CarController {
     }
 
     @PostMapping(value = "save")
-    public void save(@RequestBody Car newCar) {
+    public void save(@RequestBody CarDto newCar) {
         carService.save(newCar);
     }
 }
