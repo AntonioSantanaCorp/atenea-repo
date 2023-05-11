@@ -25,7 +25,7 @@ public class Message {
     private Integer idClient;
     @Column(name = "messageText")
     private Integer messageText;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "idCar")
     @JsonIgnoreProperties("messages")
     private Car car;

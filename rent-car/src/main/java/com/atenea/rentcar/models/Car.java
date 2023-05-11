@@ -39,11 +39,11 @@ public class Car {
     @JsonIgnoreProperties("cars")
     private Gama gama;
 
-    @OneToMany(cascade = { CascadeType.PERSIST },fetch = FetchType.LAZY, mappedBy = "car")
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "car")
     @JsonIgnoreProperties("car")
     List<Message> messages;
 
-    @OneToMany(cascade = { CascadeType.PERSIST },fetch = FetchType.LAZY, mappedBy = "car")
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "car")
     @JsonIgnoreProperties("car")
     List<Reservation> reservations;
 }

@@ -31,7 +31,7 @@ public class Reservation {
     private Date devolutionDate;
     @Column(name = "status")
     private String status;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "idCar")
     @JsonIgnoreProperties("reservations")
     private Car car;
